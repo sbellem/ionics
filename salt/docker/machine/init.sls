@@ -1,0 +1,2 @@
+include:
+  - docker.machine.install

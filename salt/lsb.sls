@@ -1,0 +1,2 @@
+lsb-core:
+  pkg.installed
