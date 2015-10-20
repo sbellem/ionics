@@ -1,6 +1,7 @@
 base:
   '*':
     - lsb
+    - gpg
     - vim
     - tmux
     - postgres
@@ -8,3 +9,5 @@ base:
     - npm
     - bash_completion
     - docker
+    - ruby
+    - apiary
