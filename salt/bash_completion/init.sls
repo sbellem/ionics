@@ -1,2 +1,2 @@
 include:
-  - django
+  - bash_completion.django
