@@ -1,0 +1,11 @@
+file_client: local
+
+file_roots:
+  base:
+    - /srv/ionics/salt
+
+hash_type: sha512
+
+pillar_roots:
+  base:
+    - /srv/ionics/pillar
