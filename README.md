@@ -41,3 +41,9 @@ pillar_roots:
 ```
 
 *A minimalistic example [minion](minion) file is provided in this repo.*
+
+To apply the states:
+
+```bash
+$ sudo salt-call --local -l debug state.highstate
+```
