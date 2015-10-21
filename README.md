@@ -40,4 +40,4 @@ pillar_roots:
     - /srv/ionics/pillar
 ```
 
-*A minimalistic example `minion` file is provided in this repo.*
+*A minimalistic example [minion](minion) file is provided in this repo.*
