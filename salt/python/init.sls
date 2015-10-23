@@ -6,3 +6,12 @@ python-dev:
 
 python-pip:
   pkg.installed
+
+python-software-properties:
+  pkg.installed
+
+python-apt:
+  pkg.installed
+
+python-pycurl:
+  pkg.installed

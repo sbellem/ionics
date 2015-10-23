@@ -1,9 +1,29 @@
-add_docker_gpg_key:
-  cmd.run:
-    - name: curl -sSL https://get.docker.com/gpg | sudo apt-key add -
+{% from "docker/map.jinja" import docker with context %}
 
-install_docker-engine:
-  cmd.run:
-    - name: curl -sSL https://get.docker.com/ | sh
+
+include:
+  - python
+
+
+install_docker_engine:
+  pkg.installed:
+    - name: docker-engine
+    - refresh: True
     - require:
-      - cmd: add_docker_gpg_key
+      - pkg: purge_lxc_docker
+
+purge_lxc_docker:
+  pkg.purged:
+    - name: lxc-docker*
+
+docker_engine_repo:
+  pkgrepo.managed:
+    - name: {{ docker.pkgrepo.name }}
+    - file: {{ docker.pkgrepo.file }}
+    - keyid: {{ docker.pkgrepo.keyid }}
+    - keyserver: {{ docker.pkgrepo.keyserver }} 
+    - clean_file: True
+    - require:
+      - pkg: python-software-properties
+    - require_in:
+      - pkg: install_docker_engine
