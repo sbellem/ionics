@@ -1,0 +1,23 @@
+{% set docker = salt['grains.filter_by']({
+    'default': {},
+    'precise': {
+	'pkgrepo': {
+	    'name': 'deb https://apt.dockerproject.org/repo ubuntu-precise main',
+	},
+    },
+    'trusty': {
+	'pkgrepo': {
+	    'name': 'deb https://apt.dockerproject.org/repo ubuntu-trusty main',
+	},
+    },
+    'vivid': {
+	'pkgrepo': {
+	    'name': 'deb https://apt.dockerproject.org/repo ubuntu-vivid main',
+	},
+    },
+    'wily': {
+	'pkgrepo': {
+	    'name': 'deb https://apt.dockerproject.org/repo ubuntu-wily main',
+	},
+    },
+}, grain='oscodename', merge=salt['pillar.get']('docker:lookup'), default='default') %}
