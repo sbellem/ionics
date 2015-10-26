@@ -10,6 +10,12 @@ masterless. For a full reference see saltstack docs:
 * [SALT MASTERLESS QUICKSTART](https://docs.saltstack.com/en/latest/topics/tutorials/quickstart.html)
 * [STANDALONE MINION](https://docs.saltstack.com/en/latest/topics/tutorials/standalone_minion.html)
 
+Note that you may have to allow pip based installs when you run install_salt.sh, i.e. include the -P flag:
+
+```bash
+$ sudo sh install_salt.sh -P
+```
+
 Once you're setup with salt:
 
 ```bash
@@ -26,21 +32,7 @@ $ vim /srv/ionics/pillar/common.sls
 
 so that `user` and `group` are set to your username (i.e.: `whomai`).
 
-Edit `/etc/salt/minion`, so that at a minimum, it contains:
-
-```bash
-file_client: local
-
-file_roots:
-  base:
-    - /srv/ionics/salt
-
-pillar_roots:
-  base:
-    - /srv/ionics/pillar
-```
-
-*A minimalistic example [minion](minion) file is provided in this repo.*
+Edit `/etc/salt/minion`, so that at a minimum, it has the same settings as those in the minimalistic example [minion](minion) file provided in this repo.
 
 To apply the states:
 
