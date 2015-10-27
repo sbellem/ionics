@@ -27,3 +27,10 @@ docker_engine_repo:
       - pkg: python-software-properties
     - require_in:
       - pkg: install_docker_engine
+
+docker:
+  service.running:
+    - name: docker
+    - enable: True
+    - require:
+      - pkg: install_docker_engine
