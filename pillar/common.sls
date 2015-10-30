@@ -1,2 +1,2 @@
-user: sylvain
-group: sylvain
+user: atom
+group: admin
