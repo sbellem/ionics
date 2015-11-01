@@ -1,3 +1,7 @@
+grains:
+  user: user		# id -un
+  group: group 		# id -gn
+
 file_client: local
 
 file_roots:
