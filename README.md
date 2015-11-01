@@ -21,7 +21,7 @@ Once you're setup with salt:
 
 ```bash
 $ sudo mkdir /srv/ionics
-$ sudo chown --recursive `whoami`:`whoami` /srv/ionics
+$ sudo chown -R `id -un`:`id -gn` ionics
 $ git clone <your_fork> /srv/ionics
 ```
 
