@@ -1,6 +1,7 @@
 python:
   pkg.installed
 
+{% if grains['os_family'] == 'Debian' %}
 python-dev:
   pkg.installed
 
@@ -15,3 +16,4 @@ python-apt:
 
 python-pycurl:
   pkg.installed
+{% endif %}
