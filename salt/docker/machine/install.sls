@@ -1,5 +1,5 @@
-{% set user = pillar['user'] %}
-{% set group = pillar['group'] %}
+{% set user = grains['user'] %}
+{% set group = grains['group'] %}
 {% set version = pillar['docker-machine']['version'] %}
 
 

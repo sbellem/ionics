@@ -1,2 +1,0 @@
-user: atom
-group: admin

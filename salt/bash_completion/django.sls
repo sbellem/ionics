@@ -6,8 +6,8 @@ get_django_bash_completion:
     - name: ~/.django_bash_completion
     - source: https://raw.github.com/django/django/master/extras/django_bash_completion
     - source_hash: sha512={{ sha512 }}
-    - user: {{ pillar['user'] }}
-    - group: {{ pillar['group'] }}
+    - user: {{ grains['user'] }}
+    - group: {{ grains['group'] }}
     - mode: 644
 
 profile_django_bash_completion:

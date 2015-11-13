@@ -4,4 +4,4 @@ include:
 apiaryio:
   gem.installed:
     - require:
-      - pkg: ruby-dev
+      - pkg: ruby
